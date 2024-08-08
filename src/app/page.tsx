@@ -1,7 +1,7 @@
 "use client";
 
 import { theme } from "@/theme/theme";
-import { ThemeProvider } from "@mui/material";
+import ThemeProvider from "@mui/material/styles/ThemeProvider";
 
 const Page = () => {
   return (
