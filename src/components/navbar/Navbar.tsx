@@ -12,13 +12,13 @@ import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import Fab from "@mui/material/Fab";
 import Box from "@mui/material/Box";
-import { Link as MuiLink } from "@mui/material";
+import MuiLink from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import React from "react";
 import Link from "next/link";
-import ScrollTop from "../scroll/ScrollTop";
+import ScrollTop from "@/components/scroll/ScrollTop";
 
 type Props = {
   window?: () => Window;
@@ -50,6 +50,7 @@ const Navbar = (props: Props) => {
         sx={{ my: 2 }}
         underline="none"
         color="inherit"
+        prefetch={true}
       >
         <Typography variant="h6">Tecnova web</Typography>
       </MuiLink>
@@ -84,6 +85,7 @@ const Navbar = (props: Props) => {
               underline="none"
               href="/"
               sx={{ flexGrow: 1, display: { xs: "none", lg: "block" } }}
+              prefetch={true}
             >
               <Typography variant="h6">Tecnova web</Typography>
             </MuiLink>
