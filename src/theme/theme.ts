@@ -1,4 +1,10 @@
+import { Roboto } from "next/font/google";
 import { createTheme } from "@mui/material";
+
+const roboto = Roboto({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const theme = createTheme({
   components: {
@@ -15,6 +21,6 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Roboto, sans-serif",
+    fontFamily: roboto.className,
   },
 });
