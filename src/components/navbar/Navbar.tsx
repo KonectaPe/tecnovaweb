@@ -58,13 +58,15 @@ const Navbar = (props: Props) => {
       <List>
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
-            <ListItemButton
-              LinkComponent={Link}
-              sx={{ textAlign: "center" }}
+            <Link
               href={item === "inicio" ? "/" : `/${item}`}
+              passHref
+              prefetch={false}
             >
-              <ListItemText primary={item.toUpperCase()} />
-            </ListItemButton>
+              <ListItemButton sx={{ textAlign: "center" }}>
+                <ListItemText primary={item.toUpperCase()} />
+              </ListItemButton>
+            </Link>
           </ListItem>
         ))}
       </List>
@@ -85,20 +87,22 @@ const Navbar = (props: Props) => {
               underline="none"
               href="/"
               sx={{ flexGrow: 1, display: { xs: "none", lg: "block" } }}
-              prefetch={true}
+              prefetch={false}
             >
               <Typography variant="h6">Tecnova web</Typography>
             </MuiLink>
             <Box sx={{ display: { xs: "none", lg: "flex" }, gap: "1rem" }}>
               {navItems.map((item) => (
-                <Button
-                  LinkComponent={Link}
+                <Link
                   key={item}
-                  color="inherit"
                   href={item === "inicio" ? "/" : `/${item}`}
+                  passHref
+                  prefetch={false}
                 >
-                  {item.toUpperCase()}
-                </Button>
+                  <Button LinkComponent={Link} color="inherit">
+                    {item.toUpperCase()}
+                  </Button>
+                </Link>
               ))}
             </Box>
             <IconButton
