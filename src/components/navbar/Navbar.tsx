@@ -6,8 +6,6 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import Fab from "@mui/material/Fab";
@@ -19,6 +17,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import React from "react";
 import Link from "next/link";
 import ScrollTop from "@/components/scroll/ScrollTop";
+import { usePathname } from "next/navigation";
 
 type Props = {
   window?: () => Window;
@@ -35,6 +34,8 @@ const navItems = [
 ];
 
 const Navbar = (props: Props) => {
+  const pathname = usePathname();
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -57,15 +58,33 @@ const Navbar = (props: Props) => {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item}>
             <Link
               href={item === "inicio" ? "/" : `/${item}`}
               passHref
               prefetch={false}
             >
-              <ListItemButton sx={{ textAlign: "center" }}>
-                <ListItemText primary={item.toUpperCase()} />
-              </ListItemButton>
+              <Button
+                LinkComponent={Link}
+                sx={{
+                  "& .MuiTouchRipple-root": {
+                    color: "rgba(255, 87, 34, 0.3)", // Cambia el color del ripple solo para este botón
+                  },
+                }}
+              >
+                <Typography
+                  color={
+                    pathname == `/${item}`
+                      ? "primary"
+                      : pathname == "/" && item == "inicio"
+                      ? "primary"
+                      : "initial"
+                  }
+                  component="span"
+                >
+                  {item.toUpperCase()}
+                </Typography>
+              </Button>
             </Link>
           </ListItem>
         ))}
@@ -78,7 +97,7 @@ const Navbar = (props: Props) => {
 
   return (
     <Box sx={{ display: "flex" }}>
-      <AppBar color="inherit" component="nav">
+      <AppBar color="inherit" component="nav" sx={{ padding: ".5rem" }}>
         <Container maxWidth="lg">
           <Toolbar>
             <MuiLink
@@ -86,11 +105,12 @@ const Navbar = (props: Props) => {
               component={Link}
               underline="none"
               href="/"
-              sx={{ flexGrow: 1, display: { xs: "none", lg: "block" } }}
+              sx={{ display: { xs: "none", lg: "block" } }}
               prefetch={false}
             >
               <Typography variant="h6">Tecnova web</Typography>
             </MuiLink>
+            <Box sx={{ flexGrow: 1, display: { xs: "none", lg: "block" } }} />
             <Box sx={{ display: { xs: "none", lg: "flex" }, gap: "1rem" }}>
               {navItems.map((item) => (
                 <Link
@@ -99,8 +119,27 @@ const Navbar = (props: Props) => {
                   passHref
                   prefetch={false}
                 >
-                  <Button LinkComponent={Link} color="inherit">
-                    {item.toUpperCase()}
+                  <Button
+                    LinkComponent={Link}
+                    color="inherit"
+                    sx={{
+                      "& .MuiTouchRipple-root": {
+                        color: "rgba(255, 87, 34, 0.3)", // Cambia el color del ripple solo para este botón
+                      },
+                    }}
+                  >
+                    <Typography
+                      color={
+                        pathname == `/${item}`
+                          ? "primary"
+                          : pathname == "/" && item == "inicio"
+                          ? "primary"
+                          : "initial"
+                      }
+                      component="span"
+                    >
+                      {item.toUpperCase()}
+                    </Typography>
                   </Button>
                 </Link>
               ))}

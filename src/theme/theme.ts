@@ -2,8 +2,9 @@ import { Roboto } from "next/font/google";
 import { createTheme } from "@mui/material";
 
 const roboto = Roboto({
-  weight: "400",
+  weight: ["300", "400", "500", "700"],
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const theme = createTheme({
@@ -21,6 +22,6 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: roboto.className,
+    fontFamily: roboto.style.fontFamily,
   },
 });

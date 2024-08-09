@@ -5,6 +5,8 @@ import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import createEmotionCache from "@/createEmotionCache";
 import CssBaseline from "@mui/material/CssBaseline";
 import { CacheProvider } from "@emotion/react";
+import { Toolbar } from "@mui/material";
+import Home from "@/components/home/Home";
 
 const Page = () => {
   const cache = createEmotionCache();
@@ -12,40 +14,7 @@ const Page = () => {
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
-        <h1>Hola desde home</h1>
+        <Home />
       </ThemeProvider>
     </CacheProvider>
   );
