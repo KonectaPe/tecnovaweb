@@ -1,7 +1,8 @@
+import Layout from "@/components/layout/Layout";
+import React from "react";
 import Grid from "@mui/material/Grid";
-import Layout from "../layout/Layout";
 
-const Home = () => {
+const Page = () => {
   return (
     <Layout>
       <Grid container spacing={2}>
@@ -16,4 +17,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Page;
