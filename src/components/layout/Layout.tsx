@@ -4,7 +4,7 @@ import { LayoutProps } from "./type";
 
 const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children }) => {
   return (
-    <Box bgcolor="#f45454" color="#ffffff" sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }}>
       <Toolbar />
       <Container maxWidth="lg">{children}</Container>
     </Box>

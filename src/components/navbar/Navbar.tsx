@@ -131,10 +131,10 @@ const Navbar = (props: Props) => {
                     <Typography
                       color={
                         pathname == `/${item}`
-                          ? "primary"
+                          ? "gold"
                           : pathname == "/" && item == "inicio"
-                          ? "primary"
-                          : "initial"
+                          ? "gold"
+                          : "primary"
                       }
                       component="span"
                     >
