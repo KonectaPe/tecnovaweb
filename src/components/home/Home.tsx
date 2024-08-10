@@ -18,15 +18,15 @@ const Home = () => {
           <Card />
         </Grid>
         <Grid item xs={6} sx={{ margin: "auto" }}>
-          <Image
-            src={svgContactanos}
-            alt="Contactanos"
-            width={200}
-            height={200}
-            style={{ width: "100%", height: "100%" }}
-            priority={true}
-            quality={50}
-          />
+          <Box sx={{ width: "100%", height: "100%" }}>
+            <Image
+              src={svgContactanos}
+              alt="Contactanos"
+              priority={true}
+              quality={20}
+              style={{ width: "100%", height: "100%" }}
+            />
+          </Box>
           <Typography textAlign={{ xs: "center", sm: "end" }} sx={{ mt: 2 }}>
             Diseñado por 😁
             <Link

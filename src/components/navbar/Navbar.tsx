@@ -108,7 +108,7 @@ const Navbar = (props: Props) => {
               sx={{ display: { xs: "none", lg: "block" } }}
               prefetch={false}
             >
-              <Typography variant="h6">Tecnova web</Typography>
+              <Typography variant="h6">Iunmy</Typography>
             </MuiLink>
             <Box sx={{ flexGrow: 1, display: { xs: "none", lg: "block" } }} />
             <Box sx={{ display: { xs: "none", lg: "flex" }, gap: "1rem" }}>
