@@ -1,7 +1,6 @@
 import Layout from "@/components/layout/Layout";
 import React from "react";
 import Grid from "@mui/material/Grid";
-import Card from "@/components/card/Card";
 
 const Page = () => {
   return (

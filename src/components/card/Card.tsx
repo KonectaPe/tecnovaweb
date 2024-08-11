@@ -12,7 +12,7 @@ const Card = () => {
         <Typography fontWeight="900" variant="h4" component="h1">
           Diseño de páginas web Profesional🚀
         </Typography>
-        <Typography fontSize="small" variant="h6" component="h2">
+        <Typography fontSize="medium" variant="h6" component="h2">
           🎨Con un diseño web estratégicamente diseñado, podemos ayudarte a
           convertir visitantes en clientes, aumentando así tus ventas y tu éxito
           en línea.🚀
